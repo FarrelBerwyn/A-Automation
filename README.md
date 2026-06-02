@@ -1,33 +1,104 @@
-# React + TypeScript + Vite
+# 🏗️ A-Automation: Full-Stack Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Complete automation platform with landing page, admin dashboard, and backend API.
 
-Currently, two official plugins are available:
+## 🌐 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Landing Page**: https://farrelberwyn.github.io/A-Automation/
+- **Admin Dashboard**: https://farrelberwyn.github.io/A-Automation/admin/dashboard
+- **Repository**: https://github.com/FarrelBerwyn/A-Automation
 
-## React Compiler
+## 📚 Documentation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - Quick overview & URLs
+- **[FULL_DEPLOYMENT_GUIDE.md](./FULL_DEPLOYMENT_GUIDE.md)** - Complete setup instructions
+- **[FINAL_SETUP_GUIDE.md](./FINAL_SETUP_GUIDE.md)** - GitHub Pages troubleshooting
+- **[BACKEND_DEPLOYMENT_GUIDE.md](./BACKEND_DEPLOYMENT_GUIDE.md)** - Backend deployment steps
 
-## Expanding the ESLint configuration
+## 🚀 Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. Frontend (Already Deployed ✅)
+Your website is live at: https://farrelberwyn.github.io/A-Automation/
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2. Deploy Backend
+See **[FULL_DEPLOYMENT_GUIDE.md](./FULL_DEPLOYMENT_GUIDE.md)** to deploy backend to Render or Railway
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+### 3. Local Development
+
+**Frontend:**
+```bash
+npm install
+npm run dev  # Runs on http://localhost:5173
+```
+
+**Backend:**
+```bash
+cd ../backend
+npm install
+npm run dev  # Runs on http://localhost:3000
+```
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: Node.js + Express + TypeScript
+- **Database**: PostgreSQL + Prisma ORM
+- **Deployment**: GitHub Pages (Frontend) + Render/Railway (Backend)
+
+## 📋 Project Features
+
+### Landing Page
+- Service showcase
+- Lead capture form
+- FAQ section
+- Responsive design
+
+### Admin Dashboard
+- Lead management
+- Dashboard statistics
+- Settings configuration
+- User authentication
+
+### Backend API
+- RESTful endpoints
+- JWT authentication
+- PostgreSQL database
+- CORS enabled
+
+## 🔄 Deployment Workflow
+
+Every commit to `main`:
+1. GitHub Actions builds frontend
+2. Deploy to GitHub Pages
+3. Backend redeploys to Render/Railway
+4. Database migrations auto-run
+
+## 🐛 Troubleshooting
+
+### Frontend Issues
+- Check: [FINAL_SETUP_GUIDE.md](./FINAL_SETUP_GUIDE.md)
+
+### Backend Issues
+- Check: [FULL_DEPLOYMENT_GUIDE.md](./FULL_DEPLOYMENT_GUIDE.md)
+
+### Common Problems
+- Check: [QUICK_REFERENCE.md](./QUICK_REFERENCE.md)
+
+## 📞 Support
+
+For detailed setup instructions, see the documentation files above.
+
+## 🎯 Next Steps
+
+1. Deploy backend (see FULL_DEPLOYMENT_GUIDE.md)
+2. Get backend URL
+3. Update `.env.production` with API URL
+4. Push changes
+5. Test integration
+
+---
+
+**Framework Details:**
       tseslint.configs.stylisticTypeChecked,
 
       // Other configs...
