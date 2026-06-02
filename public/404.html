@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>A-Automation</title>
-    <script type="text/javascript">
-      // This file redirects 404s to the index.html with the same query string
-      // needed for single-page applications hosted on GitHub Pages
-      // based on https://github.com/rafgraph/spa-github-pages
-      sessionStorage.redirect = location.href;
-    </script>
-    <meta http-equiv="refresh" content="0;url=/A-Automation/index.html">
-  </head>
-  <body>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A-Automation</title>
+  <script>
+    // Redirect SPA 404s to index.html with hash routing
+    var pathName = window.location.pathname;
+    var basePath = '/A-Automation/';
+    var pathSegments = pathName.replace(basePath, '').split('/').filter(Boolean);
+    var route = pathSegments.length ? '/' + pathSegments.join('/') : '/';
+    
+    // Save the intended route and redirect
+    window.location.replace(basePath + '#' + route);
+  </script>
+</head>
+<body>
+</body>
 </html>
