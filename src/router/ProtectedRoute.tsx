@@ -6,11 +6,19 @@ import { AdminSidebar } from '../components/organisms/admin/AdminSidebar';
 import { Spinner } from '../components/atoms/Spinner';
 
 export const ProtectedRoute: React.FC = () => {
-  const { isAuthenticated, isLoading, checkAuth } = useAuthStore();
+  const { isAuthenticated, isLoading, checkAuth, login } = useAuthStore();
+  const useMockAPI = import.meta.env.VITE_USE_MOCK_API !== 'false';
 
   useEffect(() => {
     checkAuth();
-  }, [checkAuth]);
+    
+    // Auto-login for demo mode (when using mock API)
+    if (useMockAPI && !isAuthenticated) {
+      const demoAdmin = { id: 'admin-1', email: 'admin@a-automation.id', name: 'Macintosh Admin' };
+      const demoToken = 'mock-jwt-token-1984';
+      login(demoAdmin, demoToken);
+    }
+  }, [checkAuth, login, useMockAPI, isAuthenticated]);
 
   // Apply dark theme class to body when entering admin views
   useEffect(() => {
