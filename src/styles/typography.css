@@ -1,0 +1,108 @@
+/* typography.css */
+
+/* Import Google Fonts directly */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Apply font rendering rules */
+body {
+  font-family: var(--ff-body);
+}
+
+/* Headings styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  color: var(--clr-black);
+}
+
+/* Paragraph styling */
+p {
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--clr-charcoal);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-5);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+/* Text selections */
+::selection {
+  background-color: var(--clr-charcoal);
+  color: var(--clr-cream);
+}
+
+.dark-theme ::selection {
+  background-color: var(--clr-charcoal);
+  color: var(--clr-cream-dk);
+}
+
+/* Specific styling helpers */
+.font-display {
+  font-family: var(--ff-display);
+}
+
+.font-body {
+  font-family: var(--ff-body);
+}
+
+.font-mono {
+  font-family: var(--ff-mono);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--clr-cement);
+}
+
+.text-green {
+  color: var(--clr-green);
+}
+
+.text-amber {
+  color: var(--clr-amber);
+}
+
+.text-red {
+  color: var(--clr-red);
+}
